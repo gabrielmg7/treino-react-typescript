@@ -1,3 +1,4 @@
+import "../assets/profile.jpg"
 
 const styles = {
     root: {
@@ -11,14 +12,14 @@ const styles = {
     }
 }
 
-export default function Avatar () {
-return (
-    <div style={styles.root}>
-    <img
-        src={"url"}
-        alt="Avatar"
-        style={styles.avatar}
-    />
-</div>
-);
+export default function Avatar() {
+    return (
+        <div style={styles.root}>
+            <img
+                src="./src/assets/profile.jpg"
+                alt="Avatar"
+                style={styles.avatar}
+            />
+        </div>
+    );
 }
