@@ -75,7 +75,7 @@
 .itemProject_children{
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-width: 80px;
+    justify-content: flex-end;
+    min-width: 150px;
     padding: 8px 0;
 }
