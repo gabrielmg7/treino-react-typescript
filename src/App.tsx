@@ -1,5 +1,7 @@
+import { Button } from '@mui/material';
 import React from 'react';
 import ItemProject from './components/ItemProject';
+import RestoreIcon from '@mui/icons-material/Restore'
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
         tagBgColor='red'
         tagColor='white'
       >
-        <button style={{padding:'8px', backgroundColor:'transparent', border: '1px solid #ededed'}}>view</button>
+        <Button variant='contained' startIcon={<RestoreIcon />} color='error'>Restore </Button>
       </ItemProject>
 
       <ItemProject 
@@ -23,7 +25,7 @@ function App() {
         tagBgColor='blue'
         tagColor='white'
       >
-        <button style={{padding:'8px', backgroundColor:'transparent', border: '1px solid #ededed'}}>view</button>
+        <Button variant='outlined'>view</Button>
       </ItemProject>
     </div>
   );
