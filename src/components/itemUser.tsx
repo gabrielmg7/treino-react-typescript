@@ -1,13 +1,9 @@
 import Avatar from './avatar'
-import img from './avatar'
 import '../css/itemUser.css'
 import React from 'react'
 import api from '../Api';
 
-const axios = require('axios');
-const users = require('./json/users.json')
-
-interface UserItemProps {
+export interface UserItemProps {
     results: [
         {
             gender: any,
