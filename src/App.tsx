@@ -3,18 +3,21 @@ import React from 'react';
 import ItemProject from './components/ItemProject';
 import RestoreIcon from '@mui/icons-material/Restore';
 import Head from './components/Head';
-import MenuIcon from '@mui/icons-material/Menu';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import {AcUnit, Menu, Adb} from '@mui/icons-material';
 import { color } from '@mui/system';
 import './css/head.css';
+import './css/NavbarItem.css';
+import NavbarItem from './components/NavbarItem';
 
 function App() {
   return (
     <div>
       <div className = {"head"}>
-        <Head name='Title' icon={< MenuIcon fontSize="large" />} />
-        <Button startIcon={< AcUnitIcon />}>Restore </Button>
+        <Head name='Title' icon={< Menu fontSize="large" />} />
+        <Button startIcon={< AcUnit />}>Restore </Button>
       </div>
+      
+      <NavbarItem name= 'Novo' icon={<Adb fontSize="large"/>} />
      
       <ItemProject
         tag='Upload'
