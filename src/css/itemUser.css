@@ -1,0 +1,14 @@
+.user-item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.nome {
+    text-align: center;
+}
+
+
+.profissao {
+    text-align: center;
+}

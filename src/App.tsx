@@ -1,11 +1,11 @@
 import React from 'react';
-import Avatar from './components/avatar';
+import ItemUser from './components/itemUser';
 
 
 function App() {
   return (
     <div>
-      <Avatar />
+      <ItemUser />
     </div>
   );
 }
