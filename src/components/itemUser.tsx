@@ -8,80 +8,144 @@ const axios = require('axios');
 const users = require('./json/users.json')
 
 interface UserItemProps {
-
-        results: [
-          {
-            gender: "",
+    results: [
+        {
+            gender: any,
             name: {
-              title: "",
-              first: "",
-              last: ""
+                title: any,
+                first: any,
+                last: any
             },
             location: {
-            street: {
-                number: 0,
-                name: "",
-              },
-              city: "",
-              state: "",
-              country: "",
-              postcode: "",
-              coordinates: {
-              latitude: "",
-                longitude: ""
-              },
-              timezone: {
-                offset: "",
-                description: ""
-              }
+                street: {
+                    number: any,
+                    name: any,
+                },
+                city: any,
+                state: any,
+                country: any,
+                postcode: any,
+                coordinates: {
+                    latitude: any,
+                    longitude: any
+                },
+                timezone: {
+                    offset: any,
+                    description: any
+                }
             },
-            email: ""
+            email: any
             login: {
-              uuid: "",
-              username: "",
-              password: "",
-              salt: "",
-              md5: "",
-              sha1: "",
-              sha256: ""
+                uuid: any,
+                username: any,
+                password: any,
+                salt: any,
+                md5: any,
+                sha1: any,
+                sha256: any
             },
             dob: {
-              date: "",
-              age: 0
+                date: any,
+                age: any
             },
             registered: {
-              date: "",
-              age: 0
+                date: any,
+                age: any
             },
-            phone: "",
-            cell: "",
+            phone: any,
+            cell: any,
             id: {
-              name: "",
-              value: ""
+                name: any,
+                value: any
             },
             picture: {
-              large: "",
-              medium: "",
-              thumbnail: ""
+                large: any,
+                medium: any,
+                thumbnail: any
             },
-            nat: ""
-          }
-        ],
-        info: {
-          seed: "",
-          results: 0,
-          page: 0,
-          version: ""
+            nat: any
         }
-      }
+    ],
+    info: {
+        seed: any,
+        results: any,
+        page: any,
+        version: any
+    }
+}
 
 export default function ItemUser(props: any) {
+    const [state, setState] = React.useState<UserItemProps>(
+        {
+            results: [
+                {
+                    gender: "",
+                    name: {
+                        title: "",
+                        first: "",
+                        last: ""
+                    },
+                    location: {
+                        street: {
+                            number: 0,
+                            name: "",
+                        },
+                        city: "",
+                        state: "",
+                        country: "",
+                        postcode: "",
+                        coordinates: {
+                            latitude: "",
+                            longitude: ""
+                        },
+                        timezone: {
+                            offset: "",
+                            description: ""
+                        }
+                    },
+                    email: "",
+                    login: {
+                        uuid: "",
+                        username: "",
+                        password: "",
+                        salt: "",
+                        md5: "",
+                        sha1: "",
+                        sha256: ""
+                    },
+                    dob: {
+                        date: "",
+                        age: 0
+                    },
+                    registered: {
+                        date: "",
+                        age: 0
+                    },
+                    phone: "",
+                    cell: "",
+                    id: {
+                        name: "",
+                        value: ""
+                    },
+                    picture: {
+                        large: "",
+                        medium: "",
+                        thumbnail: ""
+                    },
+                    nat: ""
+                }
+            ],
+            info: {
+                seed: "",
+                results: 0,
+                page: 0,
+                version: ""
+            }
+        }
+    );
 
-    const [state, setState] = React.useState<any>();
-
-    React.useEffect(() => {
-        api
-            .get("/?results=5000")
+    React.useLayoutEffect(() => {
+        api.get("/?results=5000")
             .then((response) => setState(response.data))
             .catch((erro) => {
                 console.error("ops! ocorreu um erro" + erro);
@@ -91,14 +155,10 @@ export default function ItemUser(props: any) {
     return (
         <div className='user-item-container'>
             <Avatar />
-            <div className='Nome'
-                onChange={setState}
-            >{props.results[0].name.first + " " + props.results[0].name.last}
+            <div className='Nome'>{props.results[0].name.first + " " + props.results[0].name.last}
             </div>
-            
-            <div className='Nacionalidade'
-                onChange={setState}
-            >{props.results[0].nat}</div>
+
+            <div className='Nacionalidade'>{props.results[0].nat}</div>
         </div>
     );
 }
