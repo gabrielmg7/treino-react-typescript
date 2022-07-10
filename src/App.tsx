@@ -41,7 +41,12 @@ function App() {
           author: item.email,
           tagBgColor: ["black","blue","red","orange","purple"][Math.floor(Math.random() * 5)],
           tagColor: "white",
-          child: <Avatar alt={`${item.name.first} ${item.name.last}`} src={item.picture.medium} />,
+          child: [
+            <Avatar alt={`${item.name.first} ${item.name.last}`} src={item.picture.medium} />,
+            button1,
+            button2,
+            button3
+          ][Math.floor(Math.random() * 4)],
         })
       })
       setMyItems([...items])
