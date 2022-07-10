@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Avatar, Button, Slider, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ItemProject from './components/ItemProject';
@@ -74,7 +73,3 @@ function App() {
 }
 
 export default App;
-=======
-import { Button } from '@mui/material';
-import React from 'react';
->>>>>>> main
