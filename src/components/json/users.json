@@ -1,0 +1,20 @@
+{
+    "user": [
+        {
+            "nome": "Antônio Matheus",
+            "profissao": "Dev Junior Full Stack"
+        },
+        {
+            "nome": "Joana Ribeiro",
+            "profissao": "Dev Sênior Back End"
+        },
+        {
+            "nome": "Franklin Souza",
+            "profissao": "Estagiário Front End"
+        },
+        {
+            "nome": "Marcos Júnior",
+            "profissao": "Dev Sênior Front End"
+        }
+    ]
+}
