@@ -75,74 +75,72 @@ interface UserItemProps {
 }
 
 export default function ItemUser(props: any) {
-    const [state, setState] = React.useState<UserItemProps>(
-        {
-            results: [
-                {
-                    gender: "",
-                    name: {
-                        title: "",
-                        first: "",
-                        last: ""
-                    },
-                    location: {
-                        street: {
-                            number: 0,
-                            name: "",
-                        },
-                        city: "",
-                        state: "",
-                        country: "",
-                        postcode: "",
-                        coordinates: {
-                            latitude: "",
-                            longitude: ""
-                        },
-                        timezone: {
-                            offset: "",
-                            description: ""
-                        }
-                    },
-                    email: "",
-                    login: {
-                        uuid: "",
-                        username: "",
-                        password: "",
-                        salt: "",
-                        md5: "",
-                        sha1: "",
-                        sha256: ""
-                    },
-                    dob: {
-                        date: "",
-                        age: 0
-                    },
-                    registered: {
-                        date: "",
-                        age: 0
-                    },
-                    phone: "",
-                    cell: "",
-                    id: {
+    const [state, setState] = React.useState<UserItemProps>({
+        results: [
+            {
+                gender: "",
+                name: {
+                    title: "",
+                    first: "",
+                    last: ""
+                },
+                location: {
+                    street: {
+                        number: 0,
                         name: "",
-                        value: ""
                     },
-                    picture: {
-                        large: "",
-                        medium: "",
-                        thumbnail: ""
+                    city: "",
+                    state: "",
+                    country: "",
+                    postcode: "",
+                    coordinates: {
+                        latitude: "",
+                        longitude: ""
                     },
-                    nat: ""
-                }
-            ],
-            info: {
-                seed: "",
-                results: 0,
-                page: 0,
-                version: ""
+                    timezone: {
+                        offset: "",
+                        description: ""
+                    }
+                },
+                email: "",
+                login: {
+                    uuid: "",
+                    username: "",
+                    password: "",
+                    salt: "",
+                    md5: "",
+                    sha1: "",
+                    sha256: ""
+                },
+                dob: {
+                    date: "",
+                    age: 0
+                },
+                registered: {
+                    date: "",
+                    age: 0
+                },
+                phone: "",
+                cell: "",
+                id: {
+                    name: "",
+                    value: ""
+                },
+                picture: {
+                    large: "",
+                    medium: "",
+                    thumbnail: ""
+                },
+                nat: ""
             }
+        ],
+        info: {
+            seed: "",
+            results: 0,
+            page: 0,
+            version: ""
         }
-    );
+    });
 
     React.useLayoutEffect(() => {
         api.get("/?results=5000")
@@ -155,10 +153,10 @@ export default function ItemUser(props: any) {
     return (
         <div className='user-item-container'>
             <Avatar />
-            <div className='Nome'>{props.results[0].name.first + " " + props.results[0].name.last}
+            <div className='Nome'>{state.results[0].name.first + " " + state.results[0].name.last}
             </div>
 
-            <div className='Nacionalidade'>{props.results[0].nat}</div>
+            <div className='Nacionalidade'>{state.results[0].nat}</div>
         </div>
     );
 }
