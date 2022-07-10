@@ -2,7 +2,8 @@ import img from '../assets/profile.jpg'
 
 const styles = {
     root: {
-        margin: '5vw'
+        margin: '2px',
+        padding: '2px'
     },
     
     avatar: {

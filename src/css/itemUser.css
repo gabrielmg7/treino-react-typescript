@@ -1,14 +1,33 @@
 .user-item-container {
+    width: 350px;
+    height: 150px;
+    margin: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+
 }
 
+user-name-content {
+    flex-direction: column;
+    justify-content: space-evenly;
+    
 
-.nome {
-    text-align: center;
 }
 
+.Nome {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px 0;
 
-.profissao {
-    text-align: center;
+
+}
+
+.Nacionalidade {
+    text-align: left;
+    padding: 10px 0;
+
 }

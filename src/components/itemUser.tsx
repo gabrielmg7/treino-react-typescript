@@ -143,7 +143,7 @@ export default function ItemUser(props: any) {
     });
 
     React.useLayoutEffect(() => {
-        api.get("/?results=5000")
+        api.get("/?results=10")
             .then((response) => setState(response.data))
             .catch((erro) => {
                 console.error("ops! ocorreu um erro" + erro);
@@ -153,10 +153,12 @@ export default function ItemUser(props: any) {
     return (
         <div className='user-item-container'>
             <Avatar />
-            <div className='Nome'>{state.results[0].name.first + " " + state.results[0].name.last}
+            <div className='user-name-content'>
+                <div className='Nome'>{state.results[0].name.first + " " + state.results[0].name.last}
+                </div>
+                <div className='Nacionalidade'>{state.results[0].location.state}
+                </div>
             </div>
-
-            <div className='Nacionalidade'>{state.results[0].nat}</div>
         </div>
     );
 }
