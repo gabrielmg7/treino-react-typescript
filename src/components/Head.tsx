@@ -1,12 +1,15 @@
-import React from 'react'
+import { SpaceBarTwoTone } from '@mui/icons-material';
+import '../css/head.css'
 
 function Head(props:any){
     return(
-        <div className = {"head-title"}>
-            <img className = {"head-icon"} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT30Gcy3-zix_Lv2aSksnA2dJXgZb8OV6bfwg&usqp=CAU" alt="icon" />
-            <h2>{props.name}</h2>
+        <div className = {"head-container"}>
+            <div className={"head-container"}>
+                <span className = {"head-icon"}>{props.icon}</span>
+                <span className = {"head-name"}>{props.name}</span>
+            </div>
         </div>
     )
 }
 
-export default Head
+export default Head;
