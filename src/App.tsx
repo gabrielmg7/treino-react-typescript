@@ -29,11 +29,11 @@ function App() {
   },[results])
 
   const atualizarLista = () => {
-    const items:any = []
+    
     console.log(myItems)
     getDadosFromApi(`/?results=${results}`).then(response=>{
-      response.results.map((item:any)=>{
-        items.push({
+      const items = response.results.map((item:any)=>{
+        return ({
           key: item.email,
           tag: item.location.country,
           time: (new Date(item.registered.date).toLocaleDateString()),
