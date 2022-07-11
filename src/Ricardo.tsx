@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div>
-      <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start', padding: '20px'}}>
+      <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: '20px'}}>
         <Button variant='outlined' onClick={()=>{atualizarLista()}}>
           Atualizar List
         </Button>
@@ -66,6 +66,7 @@ function App() {
           valueLabelDisplay="auto"
           min={1}
           max={100}
+          sx={{marginLeft: '8px'}}
           onChangeCommitted={(e,v)=>setResults(Number(v))}
         />
       </div>
