@@ -1,26 +1,13 @@
 import img from '../assets/profile.jpg'
-
-const styles = {
-    root: {
-        margin: '5vw'
-    },
-    
-    avatar: {
-        width: 100,
-        height: 100,
-        borderRadius: '50%',
-        padding: 5,
-        boxShadow: '0px 5px 25px 0px rgba(0,0,0,0.5)'
-    }
-}
+import '../css/avatar.css'
 
 export default function Avatar() {
     return (
-        <div style={styles.root}>
+        <div className='root'>
             <img
                 src={img}
                 alt="Avatar"
-                style={styles.avatar}
+                className='avatar'
             />
         </div>
     );

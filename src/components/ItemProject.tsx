@@ -14,7 +14,7 @@ interface ItemProjectProps {
 
 const ItemProject = (props:ItemProjectProps) => {
     return (
-        <div className="itemProject_container" onMouseOver={props.onMouseOver}>
+        <div className="itemProject_container" onMouseOver={                                                                                                                                                                                                                                                                            props.onMouseOver}>
             <div className='tag_time_container'>
                 <div className="itemProject_tag" style = {{backgroundColor:props.tagBgColor, color:props.tagColor,}}>
                     <span className={"tag_circle"} style= {{ backgroundColor:props.tagBgColor}}></span>
