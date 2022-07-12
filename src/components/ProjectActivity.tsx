@@ -2,7 +2,6 @@ import ItemProject from "./ItemProject"
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 import '../css/projectActivity.css'
-import { RotateLeft } from "@mui/icons-material";
 
 const ProjectActivity = (props:any) => {
     return (
@@ -12,7 +11,7 @@ const ProjectActivity = (props:any) => {
                 <AddCircleOutlineIcon sx={{paddingBottom: 2}}/>
             </div>
             <div className="activities">
-                {props.items.map((item:any, index:number) => {
+                {props.items.map((item:any) => {
                     return (
                         <ItemProject 
                             key={item.key}

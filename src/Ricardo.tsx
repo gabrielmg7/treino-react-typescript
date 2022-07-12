@@ -1,79 +1,101 @@
 import { Avatar, Button, Slider, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import ItemProject from './components/ItemProject';
-import RestoreIcon from '@mui/icons-material/Restore'
-import UserIcon from '@mui/icons-material/AccountCircle'
+
+import "./App.css"
 import ProjectActivity from './components/ProjectActivity';
 
-import api from './Api';
 
 
-const button1 = <Button variant='contained' startIcon={<RestoreIcon />} color='error'>Restore </Button>
-const button2 = <Button variant='outlined'>view</Button>
-const button3 = <Button variant='contained' startIcon={<UserIcon />} color='success'>User </Button>
-
-
-const getDadosFromApi = async (params:string) => {
-  const result = await api.get(params)
-  
-  return result.data
-}
+const items = [
+  {
+    key:1,
+    tag : 'upload',
+    author : 'Ricardo Santos',
+    tagColor : "black",
+    tagBgColor : 'green',
+    title : 'Teste dentro do layout',
+    time : "18:37",
+    onMouseOver : ()=>'',
+    item: ''
+  },
+  {
+    key:2,
+    tag : 'Task',
+    author : 'Alguem Qualquer',
+    tagColor : "black",
+    tagBgColor : 'yellow',
+    title : 'Teste dentro do layout',
+    time : "18:42",
+    onMouseOver : ()=>'',
+    item: ''
+  },
+  {
+    key:1,
+    tag : 'upload',
+    author : 'Ricardo Santos',
+    tagColor : "black",
+    tagBgColor : 'green',
+    title : 'Teste dentro do layout',
+    time : "18:37",
+    onMouseOver : ()=>'',
+    item: ''
+  },
+  {
+    key:2,
+    tag : 'Task',
+    author : 'Alguem Qualquer',
+    tagColor : "black",
+    tagBgColor : 'yellow',
+    title : 'Teste dentro do layout',
+    time : "18:42",
+    onMouseOver : ()=>'',
+    item: ''
+  },
+  {
+    key:1,
+    tag : 'upload',
+    author : 'Ricardo Santos',
+    tagColor : "black",
+    tagBgColor : 'green',
+    title : 'Teste dentro do layout',
+    time : "18:37",
+    onMouseOver : ()=>'',
+    item: ''
+  },
+  {
+    key:2,
+    tag : 'Task',
+    author : 'Alguem Qualquer',
+    tagColor : "black",
+    tagBgColor : 'yellow',
+    title : 'Teste dentro do layout',
+    time : "18:42",
+    onMouseOver : ()=>'',
+    item: ''
+  },
+]
 
 function App() {
-  const [myItems, setMyItems] = useState<any>([])
-  const [results, setResults ]= useState<number>(5)
-
-  useEffect( ()=>{
-    atualizarLista()
-
-  },[results])
-
-  const atualizarLista = () => {
-    
-    console.log(myItems)
-    getDadosFromApi(`/?results=${results}`).then(response=>{
-      const items = response.results.map((item:any)=>{
-        return ({
-          key: item.email,
-          tag: item.location.country,
-          time: (new Date(item.registered.date).toLocaleDateString()),
-          title: `${item.name.first} ${item.name.last}`,
-          author: item.email,
-          tagBgColor: ["black","blue","red","orange","purple"][Math.floor(Math.random() * 5)],
-          tagColor: "white",
-          child: [
-            <Avatar alt={`${item.name.first} ${item.name.last}`} src={item.picture.medium} />,
-            button1,
-            button2,
-            button3
-          ][Math.floor(Math.random() * 4)],
-        })
-      })
-      setMyItems([...items])
-    })
-  }
 
   return (
-    <div>
-      <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'flex-end', padding: '20px', flex:2}}>
-        <Button variant='outlined' onClick={()=>{atualizarLista()}}>
-          Atualizar List
-        </Button>
+    <div className="app-container">
+      <aside>
+        <div className="user-info"></div>
+        <menu></menu>
+        <div className="percent"></div>
+      </aside>
+      <main>
+        <header></header>
+        <div className="content">
+          <div className="user-menu">
 
-        <Slider
-          aria-label="Default"
-          defaultValue={results}
-          valueLabelDisplay="auto"
-          min={1}
-          max={100}
-          sx={{marginLeft: '8px', flex:1}}
-          onChangeCommitted={(e,v)=>setResults(Number(v))}
-        />
-      </div>
-      <ProjectActivity 
-        items = {myItems}
-        title="PROJECT ACTIVITY"
-      />
+          </div>
+          <div className="project-activity">
+            <ProjectActivity title='Project Activity' items = {items}/>
+          </div>
+        </div>
+        <footer></footer>
+      </main>
     </div>
   );
 }
