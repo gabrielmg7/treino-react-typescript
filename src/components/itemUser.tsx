@@ -1,7 +1,7 @@
 
 import '../css/itemUser.css';
 import React from 'react';
-import Avatar from './Avatar';
+import Avatar from './avatar';
 import { UserItemProps } from './userList';
 
 
@@ -73,12 +73,14 @@ const ItemUser = (props: any) => {
         }
     });
 
+
     return (
         <div className='user-item-container'>
             <Avatar />
             <div className='user-name-content'>
                 <div className='Nome'>{state.results[0].name.first + " " + state.results[0].name.last}</div>
                 <div className='Nacionalidade'>{state.results[0].location.state}</div>
+                <div className='Avatar'>{state.results[0].picture.thumbnail}</div>
             </div>
         </div>
     );

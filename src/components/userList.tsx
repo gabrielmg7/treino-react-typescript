@@ -1,7 +1,7 @@
 
 import api from "../Api";
 import React from "react";
-import ItemUser from "./ItemUser";
+import ItemUser from "./itemUser";
 
 export interface UserItemProps {
     results: [
