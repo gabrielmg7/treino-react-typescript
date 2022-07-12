@@ -6,6 +6,7 @@ import UserIcon from '@mui/icons-material/AccountCircle'
 import ProjectActivity from './components/ProjectActivity';
 
 import api from './Api';
+import UserList from './components/userList';
 
 
 const button1 = <Button variant='contained' startIcon={<RestoreIcon />} color='error'>Restore </Button>
@@ -54,26 +55,8 @@ function App() {
   }
 
   return (
-    <div>
-      <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start', padding: '20px'}}>
-        <Button variant='outlined' onClick={()=>{atualizarLista()}}>
-          Atualizar List
-        </Button>
 
-        <Slider
-          aria-label="Default"
-          defaultValue={results}
-          valueLabelDisplay="auto"
-          min={1}
-          max={100}
-          onChangeCommitted={(e,v)=>setResults(Number(v))}
-        />
-      </div>
-      <ProjectActivity 
-        items = {myItems}
-        title="PROJECT ACTIVITY"
-      />
-    </div>
+ <UserList/>
   );
 }
 

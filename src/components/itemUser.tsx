@@ -1,88 +1,32 @@
 
 import '../css/itemUser.css';
+import '../css/avatar.css';
 import React from 'react';
-import Avatar from './avatar';
 import { UserItemProps } from './userList';
 
-
-const ItemUser = (props: any) => {
-    const [state, setState] = React.useState<UserItemProps>({
-        results: [
-            {
-                gender: "",
-                name: {
-                    title: "",
-                    first: "",
-                    last: ""
-                },
-                location: {
-                    street: {
-                        number: 0,
-                        name: "",
-                    },
-                    city: "",
-                    state: "",
-                    country: "",
-                    postcode: "",
-                    coordinates: {
-                        latitude: "",
-                        longitude: ""
-                    },
-                    timezone: {
-                        offset: "",
-                        description: ""
-                    }
-                },
-                email: "",
-                login: {
-                    uuid: "",
-                    username: "",
-                    password: "",
-                    salt: "",
-                    md5: "",
-                    sha1: "",
-                    sha256: ""
-                },
-                dob: {
-                    date: "",
-                    age: 0
-                },
-                registered: {
-                    date: "",
-                    age: 0
-                },
-                phone: "",
-                cell: "",
-                id: {
-                    name: "",
-                    value: ""
-                },
-                picture: {
-                    large: "",
-                    medium: "",
-                    thumbnail: ""
-                },
-                nat: ""
-            }
-        ],
-        info: {
-            seed: "",
-            results: 0,
-            page: 0,
-            version: ""
-        }
-    });
-
-
+const Photo = (props: any) => {
     return (
-        <div className='user-item-container'>
-            <Avatar />
-            <div className='user-name-content'>
-                <div className='Nome'>{state.results[0].name.first + " " + state.results[0].name.last}</div>
-                <div className='Nacionalidade'>{state.results[0].location.state}</div>
-                <div className='Avatar'>{state.results[0].picture.thumbnail}</div>
-            </div>
+        <div className='root'>
+            <div className='Avatar'>{props.results[0].picture.medium}</div>
+        </div>
+    );
+};
+const UserData = (props: any) => {
+    return (
+        <div className='user-name-content'>
+            <div className='Nome'>{props.results[0].name.first + " " + props.results[0].name.last}</div>
+            <div className='Nacionalidade'>{props.results[0].location.state}</div>
+
+        </div>
+    );
+};
+const ItemUser = (props: any) => {
+    return (
+        <div>
+            <Photo />
+            <UserData />
         </div>
     );
 }
+
 export default ItemUser;

@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-user-name-content {
+.user-name-content {
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -25,3 +25,4 @@ user-name-content {
     text-align: left;
     padding: 10px 0;
 }
+
