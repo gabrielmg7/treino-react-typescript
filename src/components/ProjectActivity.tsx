@@ -5,7 +5,6 @@ import '../css/projectActivity.css'
 import { RotateLeft } from "@mui/icons-material";
 
 const ProjectActivity = (props:any) => {
-    console.log(props.items)
     return (
         <div className="projectActivity_container">
             <div className="project-head">
@@ -13,9 +12,10 @@ const ProjectActivity = (props:any) => {
                 <AddCircleOutlineIcon sx={{paddingBottom: 2}}/>
             </div>
             <div className="activities">
-                {props.items.map((item:any) => {
+                {props.items.map((item:any, index:number) => {
                     return (
                         <ItemProject 
+                            key={item.key}
                             tag = {item.tag}
                             author = {item.author}
                             tagColor = {item.tagColor}
@@ -24,7 +24,7 @@ const ProjectActivity = (props:any) => {
                             time = {item.time}
                             onMouseOver = {()=>''}
                         >
-                            {item.buuton}
+                            {item.child}
                         </ItemProject>
                     )
                 })}
