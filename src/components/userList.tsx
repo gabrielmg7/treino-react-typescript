@@ -3,25 +3,30 @@ import api from "../Api";
 import React from "react";
 import ItemUser from "./itemUser";
 
+interface IUserItemProps {
+    firstname: string,
+    lastname: string,
+    avatar: string,
+    nacionalidade: string,
 
+}
 
-export const UserList = (props: any) => {
-    const [itemState, setItemState] = React.useState<any>()
+export const UserList = (itens: IUserItemProps[]) => {
 
-    React.useLayoutEffect(() => {
-        api.get("/?results=10")
-            .then((response) => setItemState(response.data))
-            .catch((erro) => {
-                console.error("ops! ocorreu um erro" + erro);
-            });
-    }, []);
 
     return (
         <div className="container-user-list">
-            <ItemUser />     
-            <ItemUser />
-            <ItemUser />
-            <ItemUser />
+            {itens.map(item => {
+                return (
+                    <ItemUser
+                        itens={itens}
+                        firstname={item.firstname}
+                        lastname={item.lastname}
+                        avatar={item.avatar}
+                        nacionalidade={item.nacionalidade}
+                    />
+                )
+            })}
         </div>
     );
 }
