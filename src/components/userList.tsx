@@ -12,10 +12,11 @@ interface IUserItemProps {
 }
 
 export const UserList = (props: any) => {
+    console.log(props.itens)
     return (
         <div className="container-user-list">
             {props.itens.map((item: any) => {
-                console.log(props.item)
+                
                 return (
                     <ItemUser
                         firstname={item.firstname}
