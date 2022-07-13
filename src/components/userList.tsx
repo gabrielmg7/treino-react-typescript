@@ -11,15 +11,13 @@ interface IUserItemProps {
 
 }
 
-export const UserList = (itens: IUserItemProps[]) => {
-
-
+export const UserList = (props: any) => {
     return (
         <div className="container-user-list">
-            {itens.map(item => {
+            {props.itens.map((item: any) => {
+                console.log(props.item)
                 return (
                     <ItemUser
-                        itens={itens}
                         firstname={item.firstname}
                         lastname={item.lastname}
                         avatar={item.avatar}
