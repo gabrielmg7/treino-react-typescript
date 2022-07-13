@@ -41,8 +41,8 @@ function App() {
         return (
           {
             avatar: randomUser.picture.medium,
-            firstname: randomUser.name.firstname,
-            lastname: randomUser.name.lastname,
+            firstname: randomUser.name.first,
+            lastname: randomUser.name.last,
             nacionalidade: randomUser.location.country
           }
         )
@@ -51,7 +51,7 @@ function App() {
       setItensState(novoArray)
     })
   }, [])
-  
+
   return (
     <UserList itens={itensState} />
   );
